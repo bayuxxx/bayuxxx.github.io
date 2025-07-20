@@ -277,6 +277,18 @@ body.light-theme {
   border-radius: 5rem;
 }
 
+.work__img {
+  width: 100%;             /* Gambar akan mengisi lebar kartu */
+  max-width: 640px;        /* Tapi tidak akan lebih lebar dari 640px */
+  display: block;          /* Praktik yang baik untuk gambar */
+  
+  /* Membuat rasio aspek tetap 640:420 */
+  aspect-ratio: 640 / 420; 
+  
+  /* Mencegah gambar menjadi penyok */
+  object-fit: cover;       
+}
+
 /* Active link */
 .active-link {
   background: linear-gradient(

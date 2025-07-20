@@ -85,10 +85,9 @@
                     <h3 class="home__education">Fullstack and Flutter Developer</h3>
 
                     <div class="home__button">
-                        <a download="" href="assets/pdf/Ubayy-cv.pdf" class="button button--ghost">
-                            Download CV
+                        <a id="cv-viewer-link" download href="assets/pdf/cv2.pdf" class="button button--ghost">
+                            Lihat CV
                         </a>
-
                         <a href="#about" class="button">About</a>
                     </div>
                 </div>
@@ -480,11 +479,25 @@
 
             <div class="work__container container grid">
                 <div class="work__card mix web">
-                    <img src="assets/img/work1.jpg" alt="" class="work__img">
+                    <img src="assets/img/hideway.png" alt="" class="work__img">
+                    <h3 class="work__title">Hideway Tetebatu</h3>
+                    <a href="https://www.hidewaytetebatu.com" class="work__button">
+                        Demo <i class='bx bx-right-arrow work__icon'></i>
+                    </a>
+                </div>
+                
+                <div class="work__card mix web">
+                    <img src="assets/img/nonavilla.png" alt="" class="work__img">
+                    <h3 class="work__title">Nona Villa</h3>
+                    <a href="https://www.nonavilla.com" class="work__button">
+                        Demo <i class='bx bx-right-arrow work__icon'></i>
+                    </a>
+                </div>
 
-                    <h3 class="work__title">Web Design</h3>
-
-                    <a href="#" class="work__button">
+                <div class="work__card mix web">
+                    <img src="assets/img/lovastel.png" alt="" class="work__img">
+                    <h3 class="work__title">Lovastel Mua</h3>
+                    <a href="https://www.lovastel.id" class="work__button">
                         Demo <i class='bx bx-right-arrow work__icon'></i>
                     </a>
                 </div>
@@ -503,16 +516,6 @@
                     <img src="assets/img/work3.jpg" alt="" class="work__img">
 
                     <h3 class="work__title">Brand Design</h3>
-
-                    <a href="#" class="work__button">
-                        Demo <i class='bx bx-right-arrow work__icon'></i>
-                    </a>
-                </div>
-
-                <div class="work__card mix web">
-                    <img src="assets/img/work4.jpg" alt="" class="work__img">
-
-                    <h3 class="work__title">Web Design</h3>
 
                     <a href="#" class="work__button">
                         Demo <i class='bx bx-right-arrow work__icon'></i>
@@ -667,6 +670,29 @@
 
     <!--=============== MAIN JS ===============-->
     <script src="assets/js/main.js"></script>
+
+    <script>
+        // Tunggu hingga seluruh dokumen HTML selesai dimuat
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // 1. Pilih elemen link berdasarkan ID-nya
+            const cvLink = document.getElementById('cv-viewer-link');
+    
+            // 2. Tambahkan event listener untuk 'click'
+            cvLink.addEventListener('click', function(event) {
+                
+                // 3. Mencegah aksi default (yaitu download)
+                event.preventDefault();
+                
+                // 4. Ambil URL dari atribut href
+                const pdfUrl = this.getAttribute('href');
+                
+                // 5. Buka URL tersebut di tab baru
+                window.open(pdfUrl, '_blank');
+            });
+    
+        });
+    </script>
 </body>
 
 
